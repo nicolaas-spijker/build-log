@@ -1,0 +1,34 @@
+<!--
+  Example widget: anchored Table of Contents.
+
+  Drop this entire block into the article body near the top, right after
+  the intro paragraphs. The wrapping <div data-rt-embed-type="true"> tells
+  Webflow's rich-text renderer to leave the contents alone.
+
+  The TOC entries below are static placeholders. Replace them to match the
+  H2 IDs in your article. Anchor IDs on H2s use the slug-cased H2 text.
+
+  Why this is an embed and not native rich text:
+    - Webflow's sanitizer strips raw <ul>/<ol>/<li> outside embed wrappers.
+    - Embeds also sandbox styling, so the TOC look-and-feel does not
+      conflict with the page's body typography.
+-->
+<div data-rt-embed-type="true">
+<style>
+.rtoc{margin:24px 0;padding:18px 22px;background:#F5F5F5;border-radius:8px;font-family:Inter,system-ui,sans-serif;max-width:760px;color:#1d1d1f}
+.rtoc-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px;color:#4a4a4d}
+.rtoc-list{margin:0;padding:0 0 0 18px}
+.rtoc-list li{margin:6px 0;font-size:14px;line-height:1.5}
+.rtoc-list li a{color:#1F41C1;text-decoration:none}
+.rtoc-list li a:hover{text-decoration:underline}
+</style>
+<div class="rtoc">
+<p class="rtoc-title">Table of contents</p>
+<ol class="rtoc-list">
+<li><a href="#section-one">First section heading</a></li>
+<li><a href="#section-two">Second section heading</a></li>
+<li><a href="#section-three">Third section heading</a></li>
+<li><a href="#section-four">Fourth section heading</a></li>
+</ol>
+</div>
+</div>

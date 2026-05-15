@@ -1,0 +1,51 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pickle
+*.pem
+*.key
+*_secret*
+*secret*
+*credential*
+*credentials*
+*token*
+*_token.*
+client_secret*.json
+service_account*.json
+*.oauth.json
+gsc_token*
+ga4_token*
+
+# Local data that might contain real URLs, customer info, or domain-specific records
+*/data/link_library.json
+*/data/*.csv
+*/data/*.tsv
+*/data/exports/
+
+# Output / cache
+output/
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Node / build artifacts (if widget tooling is added later)
+node_modules/
+dist/
+build/

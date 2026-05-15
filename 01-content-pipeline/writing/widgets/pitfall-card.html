@@ -1,0 +1,48 @@
+<!--
+  Example widget: "Pitfalls to avoid" card list.
+
+  Use this for sections that would otherwise be a list of mistakes with
+  bold prefixes (which Webflow strips). Each pitfall = a red X icon + bold
+  title + body explanation. Drop into the article body where the section
+  needs to appear.
+
+  Replace the 3 pitfall items below to match your content. Add or remove
+  .pitfall-item divs as needed.
+-->
+<div data-rt-embed-type="true">
+<style>
+.pitfall-wrap{margin:24px 0;font-family:Inter,system-ui,sans-serif;max-width:760px;color:#1d1d1f}
+.pitfall-item{display:flex;gap:14px;padding:16px 18px;margin:12px 0;background:#FFF;border:1px solid #F2D6D6;border-left:4px solid #D64545;border-radius:8px}
+.pitfall-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#D64545;color:#FFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;line-height:1}
+.pitfall-text{flex:1;min-width:0}
+.pitfall-title{margin:0 0 4px;font-size:15px;font-weight:700;color:#1d1d1f;line-height:1.3}
+.pitfall-body{margin:0;font-size:14px;line-height:1.55;color:#4a4a4d}
+</style>
+<div class="pitfall-wrap">
+
+<div class="pitfall-item">
+<div class="pitfall-icon">&times;</div>
+<div class="pitfall-text">
+<p class="pitfall-title">First common mistake</p>
+<p class="pitfall-body">One or two sentences explaining what goes wrong and what to do instead. Keep it concrete.</p>
+</div>
+</div>
+
+<div class="pitfall-item">
+<div class="pitfall-icon">&times;</div>
+<div class="pitfall-text">
+<p class="pitfall-title">Second common mistake</p>
+<p class="pitfall-body">Another concrete failure mode with a short corrective.</p>
+</div>
+</div>
+
+<div class="pitfall-item">
+<div class="pitfall-icon">&times;</div>
+<div class="pitfall-text">
+<p class="pitfall-title">Third common mistake</p>
+<p class="pitfall-body">The third. Three works visually. Four starts to feel like a list.</p>
+</div>
+</div>
+
+</div>
+</div>

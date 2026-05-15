@@ -1,0 +1,53 @@
+<!--
+  Example widget: styled comparison table.
+
+  Webflow strips raw <table> outside data-rt-embed-type wrappers, so every
+  comparison table goes in an embed like this. The thead/tbody split keeps
+  the hover effect on data rows only.
+
+  Replace the column headers and rows to match your content. Per-table class
+  prefix (.cmp-tbl here) prevents style collisions when multiple tables
+  appear on the same page.
+-->
+<div data-rt-embed-type="true">
+<style>
+.cmp-tbl{width:100%;border-collapse:collapse;border:1px solid #E6E6E6;border-radius:8px;overflow:hidden;font-family:Inter,system-ui,sans-serif;font-size:14px;margin:24px auto;max-width:760px}
+.cmp-tbl thead tr{background:#F5F5F5}
+.cmp-tbl th{padding:10px 14px;text-align:left;font-weight:700;font-size:13px;color:#2F2F30}
+.cmp-tbl td{padding:10px 14px;text-align:left;border-bottom:1px solid #E6E6E6;vertical-align:top;color:#3a3a3d;line-height:1.5}
+.cmp-tbl tbody tr:hover{background:#f9f9fb;transition:background .15s ease}
+.cmp-tbl td:first-child{font-weight:600;color:#1d1d1f}
+.cmp-tbl tr:last-child td{border-bottom:none}
+@media(max-width:768px){.cmp-tbl{font-size:12px}.cmp-tbl th,.cmp-tbl td{padding:8px 10px}}
+</style>
+<table class="cmp-tbl">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Option A</th>
+<th>Option B</th>
+<th>Option C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row label one</td>
+<td>Detail for A</td>
+<td>Detail for B</td>
+<td>Detail for C</td>
+</tr>
+<tr>
+<td>Row label two</td>
+<td>Detail for A</td>
+<td>Detail for B</td>
+<td>Detail for C</td>
+</tr>
+<tr>
+<td>Row label three</td>
+<td>Detail for A</td>
+<td>Detail for B</td>
+<td>Detail for C</td>
+</tr>
+</tbody>
+</table>
+</div>
