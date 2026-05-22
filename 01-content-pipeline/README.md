@@ -29,6 +29,7 @@ The system has 4 layers:
 │   └── serp_check.py                 # STUB — top-10 SERP gap analysis
 ├── writing/
 │   ├── push_webflow.py               # STUB — asset upload + bulk create + locale handling
+│   ├── select_images.py              # STUB — pick images from a tagged library
 │   └── widgets/
 │       ├── toc-embed.html            # EXAMPLE — anchored TOC
 │       ├── pitfall-card.html         # EXAMPLE — mistakes-to-avoid card
@@ -49,6 +50,7 @@ The system has 4 layers:
 | `research/ga4_pull.py` | Stub |
 | `research/serp_check.py` | Stub |
 | `writing/push_webflow.py` | Stub |
+| `writing/select_images.py` | Stub |
 | `writing/widgets/*.html` | Example |
 | `review/post_publish_audit.py` | Stub |
 

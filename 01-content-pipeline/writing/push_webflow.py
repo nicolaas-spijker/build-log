@@ -14,6 +14,20 @@ Design intent: handle the full publish flow for Webflow's v2 API:
   4. Call publish_collection_items separately to push live (CLAUDE.md #6)
   5. Verify lastPublished updated to today
 
+date-created bump policy (per AEO research, see repo CLAUDE.md rule #3):
+
+  This script must NOT bump `date-created` by default on an update. The
+  Webflow `lastPublished` field updates automatically on publish — that
+  carries the content-freshness signal LLMs read. `date-created` carries
+  the URL-age authority signal (β=+0.05 per Discovered Labs research).
+  Bumping it on every refresh trades the URL-age signal for nothing.
+
+  Expose a `--bump-date-created` flag (off by default) for the rare
+  rewrite-level refresh (60%+ content change). When the flag is on,
+  randomize the timestamp — never use T00:00:00.000Z midnight. Use a
+  realistic working-hour stamp with non-round minutes/seconds, e.g.
+  2026-05-22T14:23:17.000Z. Pick a fresh one per article in a batch.
+
 Required env (when implemented):
   WEBFLOW_API_TOKEN=
   WEBFLOW_SITE_ID=

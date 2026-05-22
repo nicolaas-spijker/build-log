@@ -18,10 +18,15 @@ Design intent: catches problems that only surface after a CMS push, including:
 The 5 lints (see repo CLAUDE.md for full detail):
 
   1. Editorial — intro length, sentence length cap, em dashes, paragraph
-     length, header length, no bold-wrapped Quick Answer
+     length, header length, no bold-wrapped Quick Answer, Quick Answer word
+     count 80-110, primary keyword present in first 30 words of Quick Answer
   2. SEO — meta description length, keyword frequency, internal/external link
      200-checks, alt text length, thumbnail vs first-figure distinctness
-  3. GEO — tables for comparison content, Quick Answer block, named quotes
+  3. GEO — tables for comparison content (max 4 columns per the AEO research
+     in repo CLAUDE.md), Quick Answer block in top third, named quotes,
+     top-third citation rule: scan for "most-citable" shapes (Quick Answer,
+     comparison tables, definitive stat blocks) and warn if any appear below
+     0.36 of page depth (measured as character offset / total body length)
   4. Reader — jargon scan, idiom swap, no unexplained brand drops
   5. Render — hard block on list tags outside embed wrappers, widget
      scripts present, image content-types correct

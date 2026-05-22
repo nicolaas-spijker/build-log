@@ -23,6 +23,18 @@
 - AI Overview content present? [yes/no — if yes, what frame is Google using]
 - **Angle nobody is covering:** [the differentiation, the reason this article exists]
 
+## 3b. LLM-shaped queries (the alignment layer)
+
+Per Discovered Labs research on 2M AI citations (`research.discoveredlabs.com`), prompt-content alignment is β=+0.37 — 5.3x stronger than any other signal. Readers type short queries into Google but ask LLMs full questions with context. Write 2-3 actual prompts a buyer would type into Claude/ChatGPT/Perplexity on this topic. Use literal buyer phrasing, not paraphrased.
+
+- LLM-shaped query 1: [e.g. "best PM software for a 10-person marketing agency working with US clients"]
+- LLM-shaped query 2: [e.g. "what to switch to from slack for a small team that also needs simple task management"]
+- LLM-shaped query 3 (optional): [...]
+
+Pick 1-2 of these and ensure either the Quick Answer block OR a dedicated H3 question block answers them directly. This is the difference between ranking on Google and getting cited by an answer engine.
+
+Where to harvest buyer phrasings: Reddit threads on the topic, G2/Capterra/TrustRadius reviews of competitors, support tickets (if accessible), customer interview transcripts. Do not invent the phrasings — pull from real sources.
+
 ## 4. Structure
 
 - Hook (≈100-150 words): [the opening promise]

@@ -89,6 +89,34 @@ If you wire any of the writing/ helpers against a real Webflow CMS, expect these
 
 10. **Webflow Designer can strip widget HTML on edit.** If someone opens a published widget article in Designer and clicks save, the entire widget can disappear. Verify the live page after any Designer touch and restore from a local copy if needed.
 
+## AEO research-informed rules (Discovered Labs, May 2026)
+
+Discovered Labs published research on 2M AI citations across ChatGPT, Claude, Google AI, Gemini (https://discoveredlabs.com/research/what-drives-ai-citations). The findings drove the rules below. They apply to anything pushed to a CMS via the `writing/` layer.
+
+1. **Alignment dominates.** Prompt-content alignment is β=+0.37 — 5.3x stronger than any other on-page signal. Use literal buyer phrasing in H3s and the Quick Answer block. Harvest phrasings from Reddit threads, G2/Capterra/TrustRadius reviews, customer interviews — do not invent them. The brief template captures this in section 3b.
+
+2. **Top-third citation rule.** Median citation depth across 2M citations is 0.36 (top third of the page). Below-fold content loses citation value sharply. Put the most-citable shapes (Quick Answer, key comparison table, definitive stat) in the top third. The `review/post_publish_audit.py` design includes a depth check for this.
+
+3. **`date-created` bump restraint.** Page age is β=+0.05 — URL age accumulates authority. Bumping `date-created` on every refresh trades the URL-age signal for a small recency bump you already get from `lastPublished`. Bump `date-created` only on rewrite-level refreshes (60%+ content change). For tweaks, link swaps, stat refreshes — leave `date-created` alone. The `writing/push_webflow.py` stub design enforces this.
+
+4. **Title-prompt mirror.** Title-prompt similarity is β=+0.09. Don't keyword-stuff. Write 2-3 prompts a buyer would ask Claude/ChatGPT on this topic, pick a title close to one. The brief template captures candidate prompts in section 3b.
+
+5. **Quick Answer / TLDR format.** Target 80-110 words. Primary keyword in the first 30 words. Plain `<p>` (no full-paragraph `<strong>` wrap). Direct answer first, 2-4 supporting points, ends with one action or decision line.
+
+6. **Tables cap at 4 columns.** LLMs extract table rows preferentially when each row is parseable in one read. Wider tables get truncated, summarized, or skipped in citations. If a comparison needs more dimensions, split into two tables by category.
+
+7. **Engine-aware refresh cadence.** Claude median citation age 5.1 months. ChatGPT 8 months. For top-traffic articles, refresh content (which bumps `lastPublished`) at least every 5 months to stay Claude-citable. Combined with rule #3, the pattern is: older URL + fresher content.
+
+### What the research says NOT to spend effort on
+
+These do not move citations on their own:
+
+- Schema markup (no significant standalone effect)
+- Core Web Vitals (LCP, INP, CLS — collapse to zero after domain controls)
+- Lighthouse Performance score
+
+They may compound with alignment but are not levers. Don't ship "AEO best practices" lists that weight them equally with alignment.
+
 ## Pre-publish gate (the 5-lint pattern)
 
 If you wire the `review/post_publish_audit.py` skeleton against a real CMS, the gate has 5 lints. Run them all on every push.

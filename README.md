@@ -1,6 +1,6 @@
 # Build Log
 
-The companion repository to the SignalRoads Build Log series. Every Friday I publish a new go-to-market workflow I built that week, with the actual scripts, prompts, and configs alongside the writeup.
+The companion repository to the SignalRoads Build Log. Build Log is an email of case studies on the go-to-market systems I build. Each case study ships with its working code here, alongside the writeup.
 
 Each numbered folder = one workflow. Each workflow has its own README that walks through how to fork it.
 
@@ -13,7 +13,12 @@ build-log/
 │   ├── research/                 # Link library, SERP gap analysis, GSC/GA4 pulls
 │   ├── writing/                  # CMS push, widget HTML examples
 │   └── review/                   # Post-publish lint / audit
+└── strategy-brain/               # Template — a marketing brain (CLAUDE.md + docs/)
 ```
+
+## The strategy-brain template
+
+`strategy-brain/` is not a workflow, it is a starting point: a `CLAUDE.md` shell and a `docs/` skeleton for building your own marketing brain, the context layer an AI agent reads before it does anything. Copy `CLAUDE.md` and `docs/` into your own project and fill them from your strategy. See [strategy-brain/README.md](strategy-brain/README.md) and the companion case study.
 
 ## What this is not
 
@@ -42,7 +47,7 @@ See [SETUP.md](SETUP.md) for the bootstrap walkthrough.
 - Anything in a numbered folder root (`01-...`, `02-...`) is a workflow.
 - A workflow is structured: `brief/` (intelligence layer), `research/` (data pulls), `writing/` (drafting + CMS push), `review/` (post-publish checks).
 - Some scripts are fully built and runnable today.
-- Some scripts are **stubs**, marked with `TODO` headers, pointing at where the implementation lives in the next Build Log. This is intentional — each weekly post extracts one component fully.
+- Some scripts are **stubs**, marked with `TODO` headers, pointing at where the implementation lives in the next Build Log. This is intentional — each case study extracts one component fully.
 
 ## Status table
 
@@ -54,6 +59,7 @@ See [SETUP.md](SETUP.md) for the bootstrap walkthrough.
 | `01-content-pipeline/research/ga4_pull.py` | Stub | GA4 blog-page pull skeleton |
 | `01-content-pipeline/research/serp_check.py` | Stub | SERP gap analysis skeleton |
 | `01-content-pipeline/writing/push_webflow.py` | Stub | Asset upload + bulk-create + locale handling skeleton |
+| `01-content-pipeline/writing/select_images.py` | Stub | Pick images for a draft from a metadata-tagged library |
 | `01-content-pipeline/review/post_publish_audit.py` | Stub | 5-lint live-page audit skeleton |
 
 Stubs ship cleanly and run with explanatory errors, so a downstream agent (or human) can see what each one does and where it's going.
